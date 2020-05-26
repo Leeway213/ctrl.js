@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '12'
+script: npm run lint && npm test
+before_deploy: npm run build && cd dist
+deploy:
+  provider: npm
+  email: leewayzhang@outlook.com
+  skip_cleanup: true
+  api_key:
+    secure: j64SsafcyjnLPwUQdskXZcL6lSWzVIWvQ2fz5jft42WB52ABn4J8WSpHiMMlitwzL28/IYnnA6oGK2Edem3QcsGMA8Qfur3d8Lt5xa7dS0ocb5aCQI+WnZjGyXqb6PHQn5k2GVo3eJeL/E0QkYt2dS/agUgvfbvjIZaT6WeARp0iw3mNib6GXWZuHFT4BMAhO4Y/vgEN29/VTRUx4CI3DuMJPFZAj6os0baxZsKe+d2jEEKvXHkhK/QHfBLqaiwG0gqDuqMMToRY5YrQKApF7Y4lRiBg5rCJ7DwW0nnTvKzlZWN7zmA8YBd6R2QtmGn5iEvV3AuofOE+ntTxWktaSJ4fkXlE+z+IbFTN4u9stwBlF4nezDzYvzPKawKqeeh+ny1xZJyzq0kH5iPNsa9wqZ8t2uQ4kI6+PxEyDKi/uFzGgyo9Ph8H5Sq8Xj5KYeMw85xovFHFQyl+7RvYsCplQx4dHvCp+hvpG89Jn1yWMOl19NC9tzAw5YLjzduLr6xotV5qUxg8isOoZloCNUFcafi3k4zCYXZOd0feyVBPgAdjTaUv0hJZ5YGPqnEX/0+uIlU8ze7jL/pLpUP45/RHhSHdJfwHYzGUakl51rqh26lw66Hb+faAIshUM1dONJPm84iPvRzlM23hqsyIArllmAcxFAtMsAHhPEG9W1TUGeU=
+  on:
+    tags: true
+    branch: master
+  tag: latest
