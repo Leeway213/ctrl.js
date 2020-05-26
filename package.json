@@ -1,5 +1,5 @@
 {
-  "name": "ctrljs",
+  "name": "@ctrljs/core",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -70,5 +70,9 @@
     "rollup-plugin-version-injector": "^1.2.2",
     "ts-jest": "~25.5.1",
     "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "pascal-case": "^3.1.1",
+    "resize-observer-polyfill": "^1.5.1"
   }
 }
