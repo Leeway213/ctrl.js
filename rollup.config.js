@@ -12,6 +12,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 import json from '@rollup/plugin-json';
 import glslify from 'rollup-plugin-glslify';
+import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 import serveBuilder from './build/rollup/serve';
 import outputBuilder from './build/rollup/output';
@@ -52,6 +53,12 @@ export default {
     sourcemaps(),
 
     json(),
+
+    production && copy({
+      targets: [
+        { src: 'README.md', dest: 'dist'}
+      ]
+    }),
 
     production &&
       terser({
